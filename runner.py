@@ -44,9 +44,9 @@ def download_images(url, destination):
 
 
 def get_posts(subreddit, folder_name, retrieve_limit=50):
-    reddit = praw.Reddit(client_id='kAxt7-vjE3M76w', client_secret='rT0di6H4UHvg8YhjGrxe9dqgDwI',
-                         user_agent='The Archivist v1.0 by FunkyBlaster')
-    # TODO: Add optional selector for new, top, etc? idk if i would want so w/e
+    reddit = praw.Reddit(client_id='', client_secret='',
+                         user_agent='')
+    # TODO: Add optional selector for new, top, etc?
     for submission in reddit.subreddit(subreddit).hot(limit=retrieve_limit):
         path = parent_folder + "/" + folder_name + "/" + submission.title
         download_images(submission.url, path)
